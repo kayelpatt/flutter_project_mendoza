@@ -31,9 +31,59 @@ class Storycard extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             image: DecorationImage(
             image: AssetImage(story.storyImagePath), fit: BoxFit.cover)),
-            
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+
+                 gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Colors.transparent, Colors.black.withOpacity(0.7)],
+                stops: const [0.6, 1.0],
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 32,
+                    height: 32,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Colors.white, width: 2),
+                      image: DecorationImage(
+                        image: AssetImage(story.profileImagePath),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  const Spacer(),
+                  Text(
+                    story.username,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  Text(
+                    story.timeAge,
+                    style: TextStyle(
+                      color: Colors.white.withOpacity(0.8),
+                      fontSize: 10,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
-      ); 
+      ),
+    );
   }
 }
+
