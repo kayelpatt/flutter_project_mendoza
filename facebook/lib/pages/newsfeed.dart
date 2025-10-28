@@ -54,8 +54,8 @@ class _NewsfeedState extends State<Newsfeed> {
           NewsFeedPost(),
           NewsFeedPost(
             name: "Neo Sebastiene Halaba",
-            caption: "Hi",
-            imageurl: "assets/myday/myday2.jpg",
+            caption: "Just pulled evernight!",
+            imageurl: "assets/myday/myday6.jpg",
           ),    
           ],
         ),
